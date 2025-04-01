@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/movies/movie-index.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="page-header">
+  <h1>Movie List</h1>
+  <img
+    src="{% static 'images/Avengers.jpeg' %}"
+    alt="Avengers"
+  />
+  <img
+    src="{% static 'images/The bank Job img.jpeg' %}"
+    alt="The Bank Job"
+  />
+  <img
+    src="{% static 'images/Hustle & Flow.jpeg' %}"
+    alt="Hustle & Flow'"
+  />
+  <img
+    src="{% static 'images/friday img.jpeg' %}"
+    alt="Friday"
+  />
+  <img
+  src="{% static 'images/school dance.jpeg' %}"
+  alt="School Dance"
+/>
+</section>
+
+<section class="card-container">
+    {% for movie in movies %}
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img
+          src="{% static 'images/movie app logo.jpeg' %}"
+          alt="Movies"
+        />
+      </div>
+      <h2 class="card-title">{{ movie.title }}</h2>
+    
+      <p>{{ movie.director }}</p> 
+      <p>{{ movie.genre }}</p>
+      <p>{{ movie.description }}</p>
+      <p>{{ movie.released }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
