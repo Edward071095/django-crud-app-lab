@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/movies/movie-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="movie-container">
+  <div class="movie-img">
+    <img src="{% static 'images/movie app logo.jpeg' %}" alt="Ed's movies" />
+  </div>
+  <div class="movie-details">
+    <h1>{{ movie.title }}</h1>
+    <h2>{{ movie.director }}</h2>
+    <h3>{{ movie.genre }}</h3>
+    <p>{{ movie.description }}</p>
+    <p>{{ movie.relesed }}</p>
+  </div>
+    <div class="update-buttons">
+      <a href="{% url 'movie-update' movie.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'movie-delete' movie.id %}" class="btn danger">Delete</a>
+    </div>
+</section>
+{% endblock %}

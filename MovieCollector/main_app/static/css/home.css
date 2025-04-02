@@ -1,3 +1,9 @@
+body {
+  background-image: url("https://media.cnn.com/api/v1/images/stellar/prod/150728124554-retro-cinema-tease.jpg?c=original");
+  background-position: 100%;
+  background-size: 100%;
+}
+
 main {
     display: flex;
     align-items: center;
@@ -28,6 +34,8 @@ main {
   }
   
   .movie-container {
+    display: flex;
+    justify-content: center;
     width: 80%;
   }
   
