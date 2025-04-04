@@ -20,4 +20,52 @@
       <a href="{% url 'movie-delete' movie.id %}" class="btn danger">Delete</a>
     </div>
 </section>
+
+<!-- Existing cat-container above -->
+<div class="cast-container">
+  <section class="cast">
+    <div class="subsection-title">
+      <h2>Cast</h2>
+      <img
+        src="{% static 'images/movie-time.jpeg' %}"
+        alt="movie time"
+      />
+      <img src="{% static 'images/film-logo.avif' %}" alt="A movie logo" />
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Notable Films</th>
+          <th>Years Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cast in movie.cast_set.all %}
+          <tr>
+            <td>{{cast.name}}</td>
+            <td>{{cast.age}}</td>
+            <td>{{cast.notable_films}}</td>
+            <td>{{cast.years_active}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<h3>Add Cast</h3>
+<!-- Add just above the feedings table -->
+<form 
+  action="{% url 'add-cast' movie.id %}"
+  method="post" 
+  class="subsection-content" 
+  autocomplete="off"
+  >
+  {% csrf_token %} 
+  {{ cast_form.as_p }}
+  <button type="submit" class="btn submit">Add Cast</button>
+</form>
+
 {% endblock %}

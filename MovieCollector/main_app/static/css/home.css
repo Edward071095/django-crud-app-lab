@@ -26,25 +26,36 @@ main {
   }
   
   .logo-container {
-    display: flex;
+    /* display: flex;
     max-width: 375px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; */
   }
   
   .movie-container {
     display: flex;
     justify-content: center;
+    color: cadetblue;
+    border: aquamarine;
+    border-radius: 10px;
+    border-bottom: 10px;
+    text-shadow: 2px 2px 5px aquamarine;
+    font-size: 40px;
     width: 80%;
+    margin: 20px auto;
+    position: relative;
+    top: 0;
   }
   
   .login {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 80%;
+    color: white;
   }
   
   .login h1 {
